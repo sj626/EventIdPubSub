@@ -61,7 +61,7 @@ if ($Test[-1] -eq '$') {Write-Host "Computer not User"}
 else{
 $MSG = New-GcpsMessage -Data $NewUser
 write-host($User.Data) 
-Publish-GcpsMessage -Message @($MSG) -Topic "member" -Project "cloud-custodian-328316" 
+Publish-GcpsMessage -Message @($MSG) -Topic "member" -Project " " 
 }
 $Message = $A.Message
 $EventID = $A.Id
@@ -69,17 +69,17 @@ $MachineName = $A.MachineName
 $Source = $A.ProviderName
 
 
-#$EmailFrom = "no-reply@meditech.com"
-#$EmailTo = "admonitor-testing-group@meditech.com"
+#$EmailFrom = "no-reply@.com"
+#$EmailTo = "group@.com"
 #$Subject = "Alert From $MachineName"
 #$Body = "EventID: $EventID`nSource: $Source`nMachineName: $MachineName `nMessage: $Message"
-#$SMTPServer = "http://atmailrelay.meditech.com"
+#$SMTPServer = "http://atmailrelay.com"
 
 
 #$SMTPClient = New-Object Net.Mail.SmtpClient($SmtpServer, 25)
 #$SMTPClient.EnableSsl = $true
-#$password = 'fctpeawmgagvhvxc'
+#$password = '##############'
 #[SecureString]$securepassword = $password | ConvertTo-SecureString -AsPlainText -Force
-#$SMTPClient.Credentials = New-Object System.Net.NetworkCredential("admonitor-testing-group@meditech.com", $securepassword)
+#$SMTPClient.Credentials = New-Object System.Net.NetworkCredential("group@.com", $securepassword)
 #$SMTPClient.Send($EmailFrom, $EmailTo, $Subject, $Body)
 }
