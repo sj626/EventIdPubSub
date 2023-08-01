@@ -1,0 +1,17 @@
+
+- hosts: all
+  gather_facts: false
+  tasks:
+  - name: Restrict Max Sessions
+    win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+      name: MaxInstanceCount
+      data: 2
+      type: dword
+    
+  - name: Enable Single Session
+    win_regedit:
+      path: HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services
+      name: fSingleSessionPerUser
+      data: 0
+      type: dword
